@@ -26,7 +26,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className='flex gap-2 items-center'>
-                    <Image src={logo}></Image>
+                    <Image src={logo} alt=''></Image>
                     Book Vibe
                 </div>
 
