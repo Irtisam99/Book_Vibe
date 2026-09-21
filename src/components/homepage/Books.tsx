@@ -21,7 +21,7 @@ const Books = async () => {
                 </p>
 
                 <h2 className="text-3xl font-bold text-gray-900 md:text-4xl">
-                    Discover Your Next Favorite Book
+                    Popular Books
                 </h2>
 
                 <p className="mx-auto mt-3 max-w-2xl text-gray-500">
@@ -33,7 +33,7 @@ const Books = async () => {
             <section className='container mx-auto my-[70px] grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
 
                 {
-                    booksData.map((book:Ibook) => {
+                    booksData.slice(2,8).map((book:Ibook) => {
                         return <BookCard key={book.bookId} book={book}></BookCard>
                     })
                 }

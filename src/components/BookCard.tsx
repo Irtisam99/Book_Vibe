@@ -1,15 +1,16 @@
 import { Ibook } from '@/types/books.type';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
-const BookCard = ({book}:{book:Ibook}) => {
+const BookCard = ({ book }: { book: Ibook }) => {
     return (
         <div className="group flex h-full flex-col overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
 
 
             {/* Image Section */}
             <div className="relative flex h-80 items-center justify-center overflow-hidden bg-gray-100 p-6 sm:h-84">
-                
+
                 {/* Background decoration */}
                 <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-green-100/60 transition-transform duration-500 group-hover:scale-150" />
 
@@ -78,12 +79,14 @@ const BookCard = ({book}:{book:Ibook}) => {
 
                 {/* Button */}
                 <div className="mt-5">
-                    <button className="btn w-full rounded-full border-0 bg-gray-900 text-white transition-all duration-300 hover:bg-green-600">
-                        View Details
-                        <span className="ml-1 transition-transform duration-300 group-hover:translate-x-1">
-                            →
-                        </span>
-                    </button>
+                    <Link href={`/books/${book.bookId}`}>
+                        <button className="btn w-full rounded-full border-0 bg-gray-900 text-white transition-all duration-300 hover:bg-green-600">
+                            View Details
+                            <span className="ml-1 transition-transform duration-300 group-hover:translate-x-1">
+                                →
+                            </span>
+                        </button>
+                    </Link>
                 </div>
 
             </div>
