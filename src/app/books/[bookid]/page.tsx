@@ -1,3 +1,4 @@
+import ReadButton from '@/components/BookDetails/ReadButton';
 import { Ibook } from '@/types/books.type';
 import Image from 'next/image';
 import React from 'react';
@@ -133,9 +134,7 @@ const BookDetailsPage = async ({ params }: { params: Promise<{ bookid: string }>
 
                         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
 
-                            <button className="rounded-xl border border-gray-300 bg-white px-8 py-3 font-semibold text-gray-900 transition hover:bg-gray-100">
-                                Read
-                            </button>
+                            <ReadButton></ReadButton>
 
                             <button className="rounded-xl bg-[#55B4D1] px-8 py-3 font-semibold text-white transition hover:bg-[#42A5C3]">
                                 Wishlist
