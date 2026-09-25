@@ -1,18 +1,18 @@
 'use client';
 import React, { createContext, ReactNode, useState } from 'react';
 
-const BooksContext=createContext({})
+export const BooksContext=createContext({})
 
 const BooksProvider = ({children}:{children:ReactNode}) => {
 
     const [readBooks,setReadBooks] = useState([])
-    const [wishlist,setWishlist] = useState([])
+    const [wishList,setWishList] = useState([])
 
     const sharedData={
         readBooks,
         setReadBooks,
-        wishlist,
-        setWishlist
+        wishList,
+        setWishList
     }
 
     return <BooksContext.Provider value={sharedData}>

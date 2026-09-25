@@ -1,4 +1,5 @@
 import ReadButton from '@/components/BookDetails/ReadButton';
+import WishListButton from '@/components/BookDetails/WishListButton';
 import { Ibook } from '@/types/books.type';
 import Image from 'next/image';
 import React from 'react';
@@ -133,12 +134,10 @@ const BookDetailsPage = async ({ params }: { params: Promise<{ bookid: string }>
 
 
                         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                            
+                            <ReadButton book={book}></ReadButton>
 
-                            <ReadButton></ReadButton>
-
-                            <button className="rounded-xl bg-[#55B4D1] px-8 py-3 font-semibold text-white transition hover:bg-[#42A5C3]">
-                                Wishlist
-                            </button>
+                            <WishListButton book={book}></WishListButton>
 
                         </div>
 
