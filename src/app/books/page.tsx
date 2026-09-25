@@ -13,7 +13,7 @@ const Books = async () => {
     const booksData = await getBooks()
     return (
         <>
-            (
+            
             {/* Section Heading */}
             <div className="mt-10 text-center">
                 <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-green-600">
@@ -38,7 +38,7 @@ const Books = async () => {
                     })
                 }
             </section>
-            )
+            
         </>
 
     );
