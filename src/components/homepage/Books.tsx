@@ -4,9 +4,15 @@ import { Ibook } from '@/types/books.type';
 
 
 const getBooks = async () => {
-    const response = await fetch('http://localhost:3000/booksData.json')
-    const data = await response.json()
-    return data
+    try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`)
+        const data = await response.json()
+        return data
+    }catch(error){
+        console.log("error data",error)
+        return [];
+    }
+
 }
 
 const Books = async () => {
@@ -33,7 +39,7 @@ const Books = async () => {
             <section className='container mx-auto my-[70px] grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
 
                 {
-                    booksData.slice(2,8).map((book:Ibook) => {
+                    booksData.slice(2, 8).map((book: Ibook) => {
                         return <BookCard key={book.bookId} book={book}></BookCard>
                     })
                 }
